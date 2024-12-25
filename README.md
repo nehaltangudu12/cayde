@@ -1,38 +1,26 @@
-# sv
+# Cayde
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Overview
 
-## Creating a project
+Cayde is a website designed for gamers to track their games, share their game lists with friends, and find the best game guides from the internet all in one place for each game.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npx sv create
+- **Game Tracking**: Keep track of all the games you own and have played.
+- **Share Game Lists**: Share your game lists with friends and see what they are playing.
+- **Game Guides**: Access the best game guides from the internet for each game.
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Getting Started
 
-## Developing
+To get started with Cayde, simply sign up on our website and start adding your games to your list. You can then share your list with friends and explore game guides.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Contributing
 
-```bash
-npm run dev
+We welcome contributions from the community. If you would like to contribute, please fork the repository and submit a pull request.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## License
 
-## Building
 
-To create a production version of your app:
+## Contact
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+If you have any questions or feedback, please contact me at nehaltangudu12@gmail.com.
