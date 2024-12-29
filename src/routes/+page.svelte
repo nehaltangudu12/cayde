@@ -4,11 +4,11 @@
 
   let { data } = $props()
   
-  console.log(data)
+  // console.log(data)
 
   const games = data.games;
   const genrelist = data.genres;
-  console.log(genrelist);
+  //console.log(genrelist);
   // console.log(games[0].genres.map((x: number) => genres.find((y: any) => y.id === x).name));
 </script>
 
@@ -20,6 +20,7 @@
     <Gamebox 
       title={game.name} 
       genres={game.genres ? game.genres.map((x: number) => genrelist.find((y: any) => y.id === x).name) : []}
+      id={game.id}
     />
   {/each}
 </div>
