@@ -1,5 +1,6 @@
 <script lang="ts">
   let input = $props();
+  //console.log(input.genres);
 </script>
 
 <div class="bg-indigo-700 shadow-md rounded-lg overflow-hidden hover:bg-indigo-600">
