@@ -47,8 +47,6 @@
 </script>
 
 
-<h1>{game.name}</h1>
-
 <div class="m-8 p-4 bg-indigo-800 rounded flex">
   <div class="flex-none basis-2/6">
     <img src="{cover}" alt="{game.name}" class="object-cover rounded-lg shadow-2xl">
