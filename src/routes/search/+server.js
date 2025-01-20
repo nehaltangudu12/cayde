@@ -10,6 +10,7 @@ export async function GET({ url }) {
       headers: {
         'Client-ID': secrets.clientID,
         'Authorization': `Bearer ${secrets.access_token}`,
+        "cache-control": "max-age=86400"
       },
       body: "fields name,id,genres,cover; limit 50; search \"" + searchTerm + "\";"
     });

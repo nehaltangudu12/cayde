@@ -19,9 +19,7 @@
     let title : string = $state("");
 
     const steamObj = websites.find((site: any) => site.url.includes("store.steampowered"))
-    const steamID = steamObj ? steamObj.url.split("/").find((p: string) => p != '' && !isNaN(Number(p))) : "";
-    console.log(steamID)
-    
+    const steamID = steamObj ? steamObj.url.split("/").find((p: string) => p != '' && !isNaN(Number(p))) : "";    
 
     async function handleSubmit() {
       const supabase = createClient(secrets.supabaseUrl, secrets.supabaseKey);
@@ -136,7 +134,7 @@
               </span>
               <b>IGN Guides</b>
             </a>
-            <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href="http://www.google.com/search?q=site:https://gamefaqs.gamespot.com+{game.name}">
+            <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href="http://www.google.com/search?q=site:https://gamefaqs.gamespot.com+{game.name} faqs">
               <span>
                 <img class="max-h-8 my-auto mr-4" src="https://gamefaqs.gamespot.com/favicon.ico" alt="">
               </span>
