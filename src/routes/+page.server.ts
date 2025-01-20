@@ -1,4 +1,4 @@
-import secrets from '$lib/secrets.json';
+import secrets from '../../secrets.json'
 
 export const load = async () => {
   const games = await fetch("https://api.igdb.com/v4/games",

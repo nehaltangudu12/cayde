@@ -1,6 +1,6 @@
 <script lang="ts">
   import Gamebox from '$lib/gamebox.svelte';
-  import secrets from '$lib/secrets.json';
+  import secrets from '../../secrets.json';
   import { derived } from 'svelte/store';
 
   let { data } = $props()

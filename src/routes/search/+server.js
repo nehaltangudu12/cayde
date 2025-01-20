@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import secrets from '$lib/secrets.json';
+import secrets from '../../../secrets.json';
 
 export async function GET({ url }) {
   const params = url.searchParams;

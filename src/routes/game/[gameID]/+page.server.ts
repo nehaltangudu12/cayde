@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import secrets from '$lib/secrets.json';
+import secrets from '../../../../secrets.json';
 import { createClient } from '@supabase/supabase-js';
 
 

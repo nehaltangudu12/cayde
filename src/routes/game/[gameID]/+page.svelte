@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { PageData } from './$types';
-    import secrets from '$lib/secrets.json';
+    import secrets from '../../../../secrets.json';
     import { createClient } from '@supabase/supabase-js';
 
     let { data }: { data: PageData } = $props();
@@ -42,7 +42,6 @@
     }
 
     const ignformat = removeSpecials(removeAccents(game.name)).toLowerCase().replaceAll(" ", "-")
-    console.log(ignformat)
 
 </script>
 
