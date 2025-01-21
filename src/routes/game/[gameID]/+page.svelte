@@ -68,17 +68,19 @@
       <details class="bg-gray-800 rounded p-4 my-4">
       <summary class="text-2xl font-semibold cursor-pointer">Store Pages</summary>
       <div class="mt-4">
-        {#each websites as website}
-          {#if website.url.includes("steam") || website.url.includes("epic") || website.url.includes("gog") 
-            || website.url.includes("www." + removeAccents(game.name).toLowerCase()) }
-            <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
-              <span>
-                <img class="max-h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
-              </span> 
-              {website.url}
-            </a>
-          {/if}
-      {/each}
+        {#if websites}
+          {#each websites as website}
+            {#if website.url.includes("steam") || website.url.includes("epic") || website.url.includes("gog") 
+              || website.url.includes("www." + removeAccents(game.name).toLowerCase()) }
+              <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
+                <span>
+                  <img class="max-h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
+                </span> 
+                {website.url}
+              </a>
+            {/if}
+          {/each}
+        {/if}
       </div>
       </details>
     </section>
@@ -124,19 +126,19 @@
       <div class="mt-4">
             <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href="https://steamcommunity.com/app/{steamID}/guides/">
               <span>
-                <img class="max-h-8 my-auto mr-4" src="https://steamcommunity.com/favicon.ico" alt="">
+                <img class="h-8 my-auto mr-4" src="https://steamcommunity.com/favicon.ico" alt="">
               </span>
               <b>Steam Guides</b>
             </a>
             <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href="https://www.ign.com/wikis/{ignformat}">
               <span>
-                <img class="max-h-8 my-auto mr-4" src="https://www.ign.com/favicon.ico" alt="">
+                <img class="h-8 my-auto mr-4" src="https://www.ign.com/favicon.ico" alt="">
               </span>
               <b>IGN Guides</b>
             </a>
             <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href="http://www.google.com/search?q=site:https://gamefaqs.gamespot.com+{game.name} faqs">
               <span>
-                <img class="max-h-8 my-auto mr-4" src="https://gamefaqs.gamespot.com/favicon.ico" alt="">
+                <img class="h-8 my-auto mr-4" src="https://gamefaqs.gamespot.com/favicon.ico" alt="">
               </span>
               <b>GameFAQs</b>
             </a>

@@ -1,6 +1,9 @@
 <script lang="ts">
 	import '../app.css';
+	import { navigating } from '$app/state';
+	import { SyncLoader } from 'svelte-loading-spinners';
 	let { children } = $props();
+	
 </script>
 
 
@@ -14,4 +17,11 @@
 </nav>
 
 
-{@render children()}
+	{#await navigating.complete}
+	<div class="flex justify-center items-center h-screen">
+		<SyncLoader size="100" color="#5403fc" unit="px" duration="1s" />
+	</div>
+	{:then}
+		{@render children()}
+	{/await}
+

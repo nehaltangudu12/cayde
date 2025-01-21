@@ -3,26 +3,18 @@
 
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4">Overview</h2>
-    <p class="text-lg">Cayde is a website designed for gamers to track their games, share their game lists with friends, and find the best game guides from the internet all in one place for each game.</p>
+    <p class="text-lg">Cayde is a website designed for gamers to find the best guides for their games.</p>
   </section>
 
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold mb-4">Features</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li><strong>Game Tracking</strong>: Keep track of all the games you own and have played.</li>
-      <li><strong>Share Game Lists</strong>: Share your game lists with friends and see what they are playing.</li>
-      <li><strong>Game Guides</strong>: Access the best game guides from the internet for each game.</li>
-    </ul>
-  </section>
 
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4">Getting Started</h2>
-    <p class="text-lg">To get started with Cayde, simply sign up on our website and start adding your games to your list. You can then share your list with friends and explore game guides.</p>
+    <p class="text-lg">To get started with Cayde, simply search for your favorite game</p>
   </section>
 
   <section class="mb-8">
     <h2 class="text-2xl font-semibold mb-4">Contributing</h2>
-    <p class="text-lg">We welcome contributions from the community. If you would like to contribute, please fork the repository and submit a pull request.</p>
+    <p class="text-lg">I welcome contributions from the community. If you would like to contribute, please fork the repository and submit a pull request.</p>
   </section>
 
   <section class="mb-8">
