@@ -150,7 +150,8 @@
       <div>
         {#if guides}
           {#each guides as guide}
-          <div class="bg-gray-800 p-4 gap-4 rounded mx-8 hover:scale-105 transition-all flex flex-row"><a href="/" class="flex flex-row gap-4" >
+          <div class="bg-gray-800 p-4 gap-4 rounded mx-8 hover:scale-105 transition-all flex flex-row">
+            <a href={guide.url} class="flex flex-row gap-4" >
             <img class="max-h-8 my-auto" src={"https://" + guide.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
             <div>
               <span class="text-xl">{guide.title}</span>
