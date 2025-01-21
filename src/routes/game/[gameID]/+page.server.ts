@@ -10,6 +10,7 @@ export const load = (async ({ params }) => {
     .from('Guides')
     .select()
     .eq('game', params.gameID)
+    .order('stars', { ascending: false })
   if (error) {
     console.log(error);
   }

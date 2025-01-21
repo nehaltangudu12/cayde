@@ -19,15 +19,30 @@
     let title : string = $state("");
 
     const steamObj = websites.find((site: any) => site.url.includes("store.steampowered"))
-    const steamID = steamObj ? steamObj.url.split("/").find((p: string) => p != '' && !isNaN(Number(p))) : "";    
+    const steamID = steamObj ? steamObj.url.split("/").find((p: string) => p != '' && !isNaN(Number(p))) : "";   
+
+    const supabase = createClient(secrets.supabaseUrl, secrets.supabaseKey);
 
     async function handleSubmit() {
-      const supabase = createClient(secrets.supabaseUrl, secrets.supabaseKey);
       const { data: guide, error } = await supabase
         .from('Guides')
         .insert({game: game.id, url: submitURL, title: title})
       if (error) {
         console.log(error);
+      }
+    }
+
+    async function handleStar(id: number, starCount: number) {
+      let counter = document.getElementById(id.toString());
+      if (counter && Number(counter.innerText) == starCount) {
+        const { data: guide, error } = await supabase
+          .from('Guides')
+          .update({ stars: starCount + 1})
+          .eq('id', id)
+        if (error) {
+          console.log(error);
+        }
+        counter.innerText = (starCount + 1).toString();
       }
     }
 
@@ -74,7 +89,7 @@
               || website.url.includes("www." + removeAccents(game.name).toLowerCase()) }
               <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
                 <span>
-                  <img class="max-h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
+                  <img class="h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
                 </span> 
                 {website.url}
               </a>
@@ -93,7 +108,7 @@
         {#if website.url.includes("fandom") || website.url.includes("wikia") || website.url.includes("wikipedia")}
           <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
               <span>
-                <img class="max-h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
+                <img class="h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
               </span>
               {website.url}
           </a>
@@ -111,7 +126,7 @@
           {#if website.url.includes("Discord") || website.url.includes("twitter") || website.url.includes("instagram")}
             <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
               <span>
-                <img class="max-h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="">
+                <img class="h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="">
               </span>
               {website.url}
           </a>
@@ -160,10 +175,10 @@
             <div class="flex-auto"></div>          
             </a> 
             <div class="flex-auto"></div>
-            <p class="my-auto text-xl text">{guide.stars}</p>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="max-h-10 my-auto place-self-end hover:fill-white">
+            <p id={guide.id} class="my-auto text-xl text">{guide.stars}</p>
+            <svg role="button" tabindex="0" aria-pressed="false" onclick={() => handleStar(guide.id, guide.stars)} onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleStar(guide.id, guide.stars); }} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="max-h-10 my-auto place-self-end hover:fill-white">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
+            </svg>
             </div>
           {/each}
         {/if}
