@@ -1,6 +1,20 @@
 import secrets from '../../secrets.json'
 
 export const load = async () => {
+
+  const popularGames = await fetch("https://api.igdb.com/v4/popularity_primitives",
+  {
+    method: "POST",
+    headers: {
+      "Client-ID": secrets.clientID,
+      "Authorization": `Bearer ${secrets.access_token}`,
+      "cache-control": "max-age=86400"
+    },
+    body: "fields game_id; sort value desc; limit 20; where popularity_type = 1;"
+  });
+  const popData = await popularGames.json();
+  let ids = popData.map((game: any) => game.game_id);
+
   const games = await fetch("https://api.igdb.com/v4/games",
   {
     method: "POST",
@@ -9,7 +23,7 @@ export const load = async () => {
       "Authorization": `Bearer ${secrets.access_token}`,
       "cache-control": "max-age=86400"
     },
-    body: "fields *; sort rating desc;"
+    body: "fields *; sort rating desc; where id = (" + ids.join(",") + ") & category = (0,8,9);"
   });
   const data = await games.json();
 

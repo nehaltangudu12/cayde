@@ -89,7 +89,7 @@
               || website.url.includes("www." + removeAccents(game.name).toLowerCase()) }
               <a class="text-xl bg-gray-800 rounded p-4 my-4 hover:bg-blue-800 flex flex-row" href={website.url}>
                 <span>
-                  <img class="h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="https://gamefaqs.gamespot.com/favicon.ico">
+                  <img class="h-8 my-auto mr-4" src={"https://" + website.url.split('/')[2] + "/favicon.ico"} alt="favicon.ico">
                 </span> 
                 {website.url}
               </a>
