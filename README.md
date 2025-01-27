@@ -2,24 +2,20 @@
 
 ## Overview
 
-Cayde is a website designed for gamers to track their games, share their game lists with friends, and find the best game guides from the internet all in one place for each game.
+Cayde is a website designed for gamers to find the best game guides from the internet!
 
 ## Features
 
-- **Game Tracking**: Keep track of all the games you own and have played.
-- **Share Game Lists**: Share your game lists with friends and see what they are playing.
 - **Game Guides**: Access the best game guides from the internet for each game.
+- **Game Info**: Find each game's wiki pages and store pages  
 
 ## Getting Started
 
-To get started with Cayde, simply sign up on our website and start adding your games to your list. You can then share your list with friends and explore game guides.
+To get started with Cayde, simply search a game and find it!
 
 ## Contributing
 
 We welcome contributions from the community. If you would like to contribute, please fork the repository and submit a pull request.
-
-## License
-
 
 ## Contact
 
